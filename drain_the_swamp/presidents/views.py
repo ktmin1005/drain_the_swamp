@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse, reverse_lazy
@@ -21,13 +20,13 @@ class PresidentDetailView(DetailView):
     template_name = '/presidents/president_detail.html'
     context_object_name = 'president'
     
-    def get_context_data(self, **kwards):
+    '''def get_context_data(self, **kwards):
         context = super().get_context_data(**kwards)
         context['donations'] = self.object.donation_set.all()
         context['endorsed_policies'] = self.object.policies_endorsed.all()
         context['enacted_policies'] = self.object.policies_enacted.all()
         context['vetoed_policies'] = self.object.policies_vetoed.all()
-        return context
+        return context'''
     
 class PresidentCreateView(CreateView):
     model = President
